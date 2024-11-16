@@ -8,12 +8,6 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
   try {
     const { name, email, password } = req.body;
     const expression: RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-    const pass: RegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/;
-    if (!pass.test(password.toString())) {
-      return res.status(407).json({
-        message: "Enter valid password with uppercase, lowercase, number & @",
-      });
-    }
     if (!expression.test(email.toString())) {
       return res.status(407).json({ message: "Enter valid email" });
     }

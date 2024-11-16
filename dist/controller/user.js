@@ -20,12 +20,6 @@ const register = (req, res, next) => __awaiter(void 0, void 0, void 0, function*
     try {
         const { name, email, password } = req.body;
         const expression = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-        const pass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/;
-        if (!pass.test(password.toString())) {
-            return res.status(407).json({
-                message: "Enter valid password with uppercase, lowercase, number & @",
-            });
-        }
         if (!expression.test(email.toString())) {
             return res.status(407).json({ message: "Enter valid email" });
         }
