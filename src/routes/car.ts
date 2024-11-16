@@ -8,9 +8,9 @@ const router = Router();
 
 router.post('/add-car', authenticateToken, addCar);
 router.get('/get-cars', authenticateToken, getUserCars);
-router.get('/get-car/:id', getCarDetail);
-router.put('/update-car/:id', updateCar);
-router.delete('/delete-car/:id', deleteCar);
+router.get('/get-car/:id',authenticateToken, getCarDetail);
+router.put('/update-car/:id',authenticateToken, updateCar);
+router.delete('/delete-car/:id',authenticateToken, deleteCar);
 router.post('/upload-images', upload.array('images', 10), uploadImages);
 
 export default router;
