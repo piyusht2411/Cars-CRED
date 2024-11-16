@@ -25,7 +25,7 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT || 8000;
 var corsOptions = {
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000", "https://car-management-app-frontend-wtna.vercel.app"],
     credentials: true
 };
 app.use((0, morgan_1.default)('dev'));

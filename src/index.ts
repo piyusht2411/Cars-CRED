@@ -22,7 +22,7 @@ const app: Application = express();
 const port = process.env.PORT || 8000;
 
 var corsOptions = {
-  origin: ["http://localhost:3000"],
+  origin: ["http://localhost:3000", "https://car-management-app-frontend-wtna.vercel.app"],
   credentials: true
 };
 
